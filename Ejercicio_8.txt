@@ -1,0 +1,73 @@
+package Ejercicio_8;
+
+import java.util.Scanner;
+
+public class NumerosPrimosAlInicio {
+	public static void main(String[] args) {
+        Scanner lector = new Scanner(System.in);
+
+        // Solicitar al usuario 10 números y almacenarlos en un array
+        int[] numerosArray = new int[10];
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Ingrese el número en la posición " + i + ": ");
+            numerosArray[i] = lector.nextInt();
+        }
+
+        // Llamar a la función para reorganizar el array con primos al principio
+        reorganizarArrayPrimosAlInicio(numerosArray);
+
+        // Mostrar el array original con índices y valores
+        System.out.println("Array original mostrando la posición del array más el valor:");
+        mostrarArrayConIndices(numerosArray);
+
+        // Mostrar el array con primos al principio con índices y valores
+        System.out.println("\nArray con los números primos en las primeras posiciones, mostrando la posición del array más el valor:");
+        mostrarArrayConIndices(numerosArray);
+
+        // Cerrar el objeto Scanner después de su uso
+        lector.close();
+    }
+
+    // Función para reorganizar el array con primos al principio
+    private static void reorganizarArrayPrimosAlInicio(int[] array) {
+        int[] arrayPrimos = new int[array.length];
+        int[] arrayNoPrimos = new int[array.length];
+        int indicePrimos = 0;
+        int indiceNoPrimos = 0;
+
+        // Separar números primos y no primos en dos arrays diferentes
+        for (int i = 0; i < array.length; i++) {
+            if (esPrimo(array[i])) {
+                arrayPrimos[indicePrimos++] = array[i];
+            } else {
+                arrayNoPrimos[indiceNoPrimos++] = array[i];
+            }
+        }
+
+        // Combinar los dos arrays en uno solo, manteniendo primos al principio
+        System.arraycopy(arrayPrimos, 0, array, 0, indicePrimos);
+        System.arraycopy(arrayNoPrimos, 0, array, indicePrimos, indiceNoPrimos);
+    }
+
+    // Función para verificar si un número es primo
+    private static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Función para mostrar el array con índices y valores
+    private static void mostrarArrayConIndices(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(i + " - " + array[i]);
+        }
+    }
+
+}

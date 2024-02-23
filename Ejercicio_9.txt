@@ -1,0 +1,128 @@
+package Ejercicio_9;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Diccionario {
+	
+	public static void main(String[] args) {
+	    // Create the Spanish-English dictionary
+	    Map<String, String> diccionario = new HashMap<>();
+	    diccionario.put("gato", "cat");
+	    diccionario.put("perro", "dog");
+	    diccionario.put("casa", "house");
+	    diccionario.put("sol", "sun");
+	    diccionario.put("luna", "moon");
+	    diccionario.put("agua", "water");
+	    diccionario.put("árbol", "tree");
+	    diccionario.put("manzana", "apple");
+	    diccionario.put("libro", "book");
+	    diccionario.put("amarillo", "yellow");
+	    diccionario.put("rojo", "red");
+	    diccionario.put("verde", "green");
+	    diccionario.put("azul", "blue");
+	    diccionario.put("feliz", "happy");
+	    diccionario.put("triste", "sad");
+	    diccionario.put("grande", "big");
+	    diccionario.put("pequeño", "small");
+	    diccionario.put("bueno", "good");
+	    diccionario.put("malo", "bad");
+	    diccionario.put("hola", "hello");
+	    diccionario.put("mundo", "world");
+	    diccionario.put("persona", "person");
+	    diccionario.put("tiempo", "time");
+	    diccionario.put("año", "year");
+	    diccionario.put("día", "day");
+	    diccionario.put("noche", "night");
+	    diccionario.put("agua", "water");
+	    diccionario.put("sol", "sun");
+	    diccionario.put("luna", "moon");
+	    diccionario.put("verde", "green");
+	    diccionario.put("rojo", "red");
+	    diccionario.put("azul", "blue");
+	    diccionario.put("amarillo", "yellow");
+	    diccionario.put("número", "number");
+	    diccionario.put("animal", "animal");
+	    diccionario.put("casa", "house");
+	    diccionario.put("comida", "food");
+	    diccionario.put("amor", "love");
+	    diccionario.put("dolor", "pain");
+	    diccionario.put("trabajo", "work");
+	    diccionario.put("juego", "game");
+	    diccionario.put("música", "music");
+	    diccionario.put("familia", "family");
+	    diccionario.put("amigo", "friend");
+	    diccionario.put("dinero", "money");
+	    diccionario.put("ciudad", "city");
+	    diccionario.put("mar", "sea");
+	    diccionario.put("aire", "air");
+	    diccionario.put("fuego", "fire");
+	    diccionario.put("tierra", "earth");
+	    diccionario.put("nombre", "name");
+	    diccionario.put("mujer", "woman");
+	    diccionario.put("hombre", "man");
+	    diccionario.put("niño", "child");
+	    diccionario.put("escuela", "school");
+	    diccionario.put("trabajo", "job");
+	    diccionario.put("cuerpo", "body");
+	    diccionario.put("mente", "mind");
+	    diccionario.put("palabra", "word");
+	    diccionario.put("historia", "story");
+	    diccionario.put("aire", "air");
+	    diccionario.put("problema", "problem");
+	    diccionario.put("respuesta", "answer");
+	    diccionario.put("gobierno", "government");
+	    diccionario.put("ciencia", "science");
+	    diccionario.put("naturaleza", "nature");
+	    diccionario.put("idea", "idea");
+	    diccionario.put("parte", "part");
+	    diccionario.put("pueblo", "town");
+	    diccionario.put("través", "through");
+	    diccionario.put("nuevo", "new");
+	    diccionario.put("alto", "high");
+	    diccionario.put("bajo", "low");
+	    diccionario.put("pequeño", "small");
+	    diccionario.put("grande", "big");
+	    diccionario.put("viejo", "old");
+	    diccionario.put("joven", "young");
+	    diccionario.put("otro", "other");
+	    diccionario.put("bueno", "good");
+	    diccionario.put("malo", "bad");
+	    diccionario.put("feliz", "happy");
+	    diccionario.put("triste", "sad");
+	    diccionario.put("primer", "first");
+	    diccionario.put("último", "last");
+	    diccionario.put("fuego", "fire");
+	    diccionario.put("tierra", "earth");
+	    diccionario.put("nombre", "name");
+	    diccionario.put("mujer", "woman");
+	    diccionario.put("hombre", "man");
+	    diccionario.put("niño", "child");
+	    diccionario.put("escuela", "school");
+	    diccionario.put("trabajo", "job");
+	    diccionario.put("cuerpo", "body");
+	    diccionario.put("mente", "mind");
+	    diccionario.put("palabra", "word");
+	    diccionario.put("historia", "story");
+	    diccionario.put("lugar", "place");
+	    diccionario.put("camino", "way");
+
+	    // Ask the user for a word in Spanish
+	    Scanner lector = new Scanner(System.in);
+	    System.out.print("Ingrese una palabra en español: ");
+	    String palabraEspanol = lector.nextLine();
+
+	    // Search for the translation in the dictionary
+	    if (diccionario.containsKey(palabraEspanol)) {
+	        String palabraIngles = diccionario.get(palabraEspanol);
+	        System.out.println("La traducción al inglés es: " + palabraIngles);
+	    } else {
+	        System.out.println("La palabra no se encuentra en el diccionario.");
+	    }
+
+	    // Close the Scanner object after use
+	    lector.close();
+	}
+
+}

@@ -1,0 +1,73 @@
+package Ejercicio_7;
+
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+import java.util.Scanner;
+
+public class TiempoHastaFinDeSemana {
+
+	public static void main(String[] args) {
+        Scanner lector = new Scanner(System.in);
+        DayOfWeek diaUsuario = obtenerDiaUsuario(lector);
+        LocalTime horaIngresada = obtenerHoraUsuario(lector);
+        int minutosHastaFinDeSemana = calcularMinutosHastaFinDeSemana(diaUsuario, horaIngresada);
+        System.out.println("Faltan " + minutosHastaFinDeSemana + " minutos para el fin de semana.");
+        lector.close();
+    }
+
+    private static DayOfWeek obtenerDiaUsuario(Scanner lector) {
+        DayOfWeek diaUsuario = null;
+        boolean entradaValida = false;
+
+        do {
+            System.out.print("Ingrese un día de la semana en inglés (Monday, Tuesday, Wednesday, Thursday, Friday): ");
+            String entradaDiaUsuario = lector.nextLine().toLowerCase();
+
+            try {
+                diaUsuario = DayOfWeek.valueOf(entradaDiaUsuario.toUpperCase());
+                entradaValida = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: Ingrese un día de la semana válido.");
+            }
+        } while (!entradaValida);
+
+        return diaUsuario;
+    }
+
+    private static LocalTime obtenerHoraUsuario(Scanner lector) {
+        LocalTime horaIngresada = null;
+        boolean entradaValida = false;
+
+        do {
+            System.out.print("Ingrese una hora (formato HH:mm): ");
+            String entradaHoraUsuario = lector.nextLine();
+
+            try {
+                horaIngresada = LocalTime.parse(entradaHoraUsuario);
+                entradaValida = true;
+            } catch (Exception e) {
+                System.out.println("Error: Ingrese una hora válida en formato HH:mm.");
+            }
+        } while (!entradaValida);
+
+        return horaIngresada;
+    }
+
+    private static int calcularMinutosHastaFinDeSemana(DayOfWeek diaUsuario, LocalTime horaIngresada) {
+       
+        LocalTime inicioFinDeSemana = LocalTime.of(15, 0);
+     
+        int minutosHastaFinDeSemana = 0;
+
+        if (diaUsuario == DayOfWeek.FRIDAY) {
+            if (horaIngresada.isAfter(inicioFinDeSemana)) {             
+                minutosHastaFinDeSemana = (7 - diaUsuario.getValue()) * 24 * 60 + (inicioFinDeSemana.getHour() - horaIngresada.getHour()) * 60 + (inicioFinDeSemana.getMinute() - horaIngresada.getMinute());
+            }
+        } else {            
+            minutosHastaFinDeSemana = (7 - diaUsuario.getValue()) * 24 * 60 + (inicioFinDeSemana.getHour() - horaIngresada.getHour()) * 60 + (inicioFinDeSemana.getMinute() - horaIngresada.getMinute());
+        }
+
+        return minutosHastaFinDeSemana;
+    }
+
+}

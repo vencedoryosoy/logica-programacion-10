@@ -1,0 +1,146 @@
+package Ejercicio_10;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+public class DiccionarioFinal {
+	public static void main(String[] args) {
+        Map<String, String> diccionarioPalabras = new HashMap<>();
+        diccionarioPalabras.put("gato", "cat");
+        diccionarioPalabras.put("perro", "dog");
+        diccionarioPalabras.put("casa", "house");
+        diccionarioPalabras.put("sol", "sun");
+        diccionarioPalabras.put("luna", "moon");
+        diccionarioPalabras.put("agua", "water");
+        diccionarioPalabras.put("árbol", "tree");
+        diccionarioPalabras.put("manzana", "apple");
+        diccionarioPalabras.put("libro", "book");
+        diccionarioPalabras.put("amarillo", "yellow");
+        diccionarioPalabras.put("rojo", "red");
+        diccionarioPalabras.put("verde", "green");
+        diccionarioPalabras.put("azul", "blue");
+        diccionarioPalabras.put("feliz", "happy");
+        diccionarioPalabras.put("triste", "sad");
+        diccionarioPalabras.put("grande", "big");
+        diccionarioPalabras.put("pequeño", "small");
+        diccionarioPalabras.put("bueno", "good");
+        diccionarioPalabras.put("malo", "bad");
+        diccionarioPalabras.put("hola", "hello");
+        diccionarioPalabras.put("mundo", "world");
+        diccionarioPalabras.put("persona", "person");
+        diccionarioPalabras.put("tiempo", "time");
+        diccionarioPalabras.put("año", "year");
+        diccionarioPalabras.put("día", "day");
+        diccionarioPalabras.put("noche", "night");
+        diccionarioPalabras.put("agua", "water");
+        diccionarioPalabras.put("sol", "sun");
+        diccionarioPalabras.put("luna", "moon");
+        diccionarioPalabras.put("verde", "green");
+        diccionarioPalabras.put("rojo", "red");
+        diccionarioPalabras.put("azul", "blue");
+        diccionarioPalabras.put("amarillo", "yellow");
+        diccionarioPalabras.put("número", "number");
+        diccionarioPalabras.put("animal", "animal");
+        diccionarioPalabras.put("casa", "house");
+        diccionarioPalabras.put("comida", "food");
+        diccionarioPalabras.put("amor", "love");
+        diccionarioPalabras.put("dolor", "pain");
+        diccionarioPalabras.put("trabajo", "work");
+        diccionarioPalabras.put("juego", "game");
+        diccionarioPalabras.put("música", "music");
+        diccionarioPalabras.put("familia", "family");
+        diccionarioPalabras.put("amigo", "friend");
+        diccionarioPalabras.put("dinero", "money");
+        diccionarioPalabras.put("ciudad", "city");
+        diccionarioPalabras.put("mar", "sea");
+        diccionarioPalabras.put("aire", "air");
+        diccionarioPalabras.put("fuego", "fire");
+        diccionarioPalabras.put("tierra", "earth");
+        diccionarioPalabras.put("nombre", "name");
+        diccionarioPalabras.put("mujer", "woman");
+        diccionarioPalabras.put("hombre", "man");
+        diccionarioPalabras.put("niño", "child");
+        diccionarioPalabras.put("escuela", "school");
+        diccionarioPalabras.put("trabajo", "job");
+        diccionarioPalabras.put("cuerpo", "body");
+        diccionarioPalabras.put("mente", "mind");
+        diccionarioPalabras.put("palabra", "word");
+        diccionarioPalabras.put("historia", "story");
+        diccionarioPalabras.put("aire", "air");
+        diccionarioPalabras.put("problema", "problem");
+        diccionarioPalabras.put("respuesta", "answer");
+        diccionarioPalabras.put("gobierno", "government");
+        diccionarioPalabras.put("ciencia", "science");
+        diccionarioPalabras.put("naturaleza", "nature");
+        diccionarioPalabras.put("idea", "idea");
+        diccionarioPalabras.put("parte", "part");
+        diccionarioPalabras.put("pueblo", "town");
+        diccionarioPalabras.put("través", "through");
+        diccionarioPalabras.put("nuevo", "new");
+        diccionarioPalabras.put("alto", "high");
+        diccionarioPalabras.put("bajo", "low");
+        diccionarioPalabras.put("pequeño", "small");
+        diccionarioPalabras.put("grande", "big");
+        diccionarioPalabras.put("viejo", "old");
+        diccionarioPalabras.put("joven", "young");
+        diccionarioPalabras.put("otro", "other");
+        diccionarioPalabras.put("bueno", "good");
+        diccionarioPalabras.put("malo", "bad");
+        diccionarioPalabras.put("feliz", "happy");
+        diccionarioPalabras.put("triste", "sad");
+        diccionarioPalabras.put("primer", "first");
+        diccionarioPalabras.put("último", "last");
+        diccionarioPalabras.put("fuego", "fire");
+        diccionarioPalabras.put("tierra", "earth");
+        diccionarioPalabras.put("nombre", "name");
+        diccionarioPalabras.put("mujer", "woman");
+        diccionarioPalabras.put("hombre", "man");
+        diccionarioPalabras.put("niño", "child");
+        diccionarioPalabras.put("escuela", "school");
+        diccionarioPalabras.put("trabajo", "job");
+        diccionarioPalabras.put("cuerpo", "body");
+        diccionarioPalabras.put("mente", "mind");
+        diccionarioPalabras.put("palabra", "word");
+        diccionarioPalabras.put("historia", "story");
+        diccionarioPalabras.put("lugar", "place");
+        diccionarioPalabras.put("camino", "way");
+
+
+        String[] palabrasEspañol = diccionarioPalabras.keySet().toArray(new String[0]);
+        String[] palabrasSeleccionadas = seleccionarPalabrasAlAzar(palabrasEspañol, 5);
+
+        Scanner scanner = new Scanner(System.in);
+        int respuestasCorrectas = 0;
+        int respuestasIncorrectas = 0;
+
+        for (String palabra : palabrasSeleccionadas) {
+            System.out.print("Traduce '" + palabra + "' al inglés: ");
+            String respuestaUsuario = scanner.nextLine().trim().toLowerCase();
+
+            if (respuestaUsuario.equals(diccionarioPalabras.get(palabra))) {
+                System.out.println("¡Correcto!");
+                respuestasCorrectas++;
+            } else {
+                System.out.println("Incorrecto. La respuesta correcta es '" + diccionarioPalabras.get(palabra) + "'.");
+                respuestasIncorrectas++;
+            }
+        }
+
+        System.out.println("\nResultados:");
+        System.out.println("Respuestas correctas: " + respuestasCorrectas);
+        System.out.println("Respuestas incorrectas: " + respuestasIncorrectas);
+    }
+
+    private static String[] seleccionarPalabrasAlAzar(String[] palabras, int cantidad) {
+        Random random = new Random();
+        String[] palabrasSeleccionadas = new String[cantidad];
+
+        for (int i = 0; i < cantidad; i++) {
+            int indice = random.nextInt(palabras.length);
+            palabrasSeleccionadas[i] = palabras[indice];
+        }
+
+        return palabrasSeleccionadas;
+    }
+}
